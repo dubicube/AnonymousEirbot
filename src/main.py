@@ -68,6 +68,9 @@ def deleteMessages(dataChatName):
         i = 1
         while i < len(data):
             l = data[i]
+            j = l.find('+')
+            if j!=-1:
+                l = l[:j]
             ls = l.split(' ')
             if len(ls) != 3:
                 break
@@ -215,9 +218,7 @@ def updateAlarms():
     global not_empty_chats
     alarm_list = []
     time.sleep(5)
-    fl = ['chat-1001310355692']
-    if not TEST:
-        fl = getFiles(DATACHAT_PATH)
+    fl = ['chat'+TOKENS[2]] if TEST else getFiles(DATACHAT_PATH)
     i = 0
     while i < len(fl):
         id = getDataChatId(fl[i])
