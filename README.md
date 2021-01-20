@@ -26,12 +26,12 @@ The messages written before the arrival of the bot are not automatically deleted
 
 The bot will always keep the last written message in the chat. Thus, the chat will never be totally empty.
 ## Cloning this code
-To execute this code, you need to add a file "tokens" at the root of the repo. In this file, you need to put tokens of 2 Telegram bots, 1 token per line. The first token is used in standard execution. The second token is used in test mode.
+To execute this code, you need to add a file "tokens" at the root of the repo. In this file, you need to put 2 tokens of 2 Telegram bots, on the first 2 lines. The first token is used in standard execution. The second token is used in test mode. On the third line of the file, you have to put your Telegram user ID (the number).
 
 To run the bot, execute main.py in AnonymousEirbot/src/. Add the option -t to run the bot in test mode. Example:
 py -3 main.py -t
 
-Note: In test mode, the bot operates only with one chat specified by its ID in main.py. You will have to edit this ID if you want to run test mode.
+In test mode, the bot runs with the second token, and is active only in the private chat between you and the bot (that is why you need to put your Telegram ID on the third line of the tokens file).
 
 ## How it works
 The bot listens to all kind of messages in chats. When a new message is detected, the ID of the message and the date of the message are stored in a file in AnonymousEirbot/data/. The bot creates independant storage files for each chat.
